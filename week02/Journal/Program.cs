@@ -17,6 +17,7 @@ class Program
             Console.WriteLine("3. Save");
             Console.WriteLine("4. Load");
             Console.WriteLine("5. Quit");
+            Console.WriteLine("6. Show Entry Count");
             Console.Write("Select an option: ");
 
             string choice = Console.ReadLine();
@@ -55,6 +56,15 @@ class Program
             {
                 running = false;
             }
+
+            // I added an extra feature to show the number of journal entries
+            // to exceed the core requirements.
+            else if (choice == "6")
+            {
+                 journal.ShowCount();
+            }
         }
     }
 }
+
+
