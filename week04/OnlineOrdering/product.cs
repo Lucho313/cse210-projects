@@ -1,25 +1,25 @@
-public class Address
+public class Product
 {
-    private string _street;
-    private string _city;
-    private string _state;
-    private string _country;
+    private string _name;
+    private string _productId;
+    private double _price;
+    private int _quantity;
 
-    public Address(string street, string city, string state, string country)
+    public Product(string name, string productId, double price, int quantity)
     {
-        _street = street;
-        _city = city;
-        _state = state;
-        _country = country;
+        _name = name;
+        _productId = productId;
+        _price = price;
+        _quantity = quantity;
     }
 
-    public bool IsUSA()
+    public double GetTotalCost()
     {
-        return _country.ToLower() == "usa";
+        return _price * _quantity;
     }
 
-    public string GetFullAddress()
+    public string GetPackingInfo()
     {
-        return $"{_street}\n{_city}, {_state}\n{_country}";
+        return $"{_name} ({_productId})";
     }
 }

@@ -1,13 +1,15 @@
+using System;
 using System.Collections.Generic;
 
 public class Order
 {
-    private List<Product> _products = new List<Product>();
+    private List<Product> _products;
     private Customer _customer;
 
     public Order(Customer customer)
     {
         _customer = customer;
+        _products = new List<Product>();
     }
 
     public void AddProduct(Product product)
@@ -51,6 +53,8 @@ public class Order
 
     public string GetShippingLabel()
     {
-        return $"Shipping Label:\n{_customer.GetName()}\n{_customer.GetAddress().GetFullAddress()}";
+        return "Shipping Label:\n" +
+               _customer.GetName() + "\n" +
+               _customer.GetAddress().GetFullAddress();
     }
 }
